@@ -276,7 +276,7 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
                     request.AddFormParameter("contentLayout", "Subfolder");
                     break;
                 case QBittorrentContentLayout.Subfolder:
-                    request.AddFormParameter("contentLayout", "NoSubfolder");
+                    request.AddFormParameter("contentLayout", "NoSubFolder");
                     break;
             }
         }
