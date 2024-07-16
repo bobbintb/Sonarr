@@ -5,6 +5,6 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
         Default = 0,
         Original = 1,
         Subfolder = 2,
-        NoSubfolder = 3
+        NoSubFolder = 3
     }
 }
