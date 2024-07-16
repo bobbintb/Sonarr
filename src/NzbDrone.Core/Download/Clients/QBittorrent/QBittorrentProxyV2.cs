@@ -267,13 +267,17 @@ namespace NzbDrone.Core.Download.Clients.QBittorrent
                 request.AddFormParameter("firstLastPiecePrio", true);
             }
 
-            if ((QBittorrentContentLayout)settings.ContentLayout == QBittorrentContentLayout.Original)
+            switch ((QBittorrentContentLayout)settings.ContentLayout)
             {
-                request.AddFormParameter("contentLayout", "Original");
-            }
-            else if ((QBittorrentContentLayout)settings.ContentLayout == QBittorrentContentLayout.Subfolder)
-            {
-                request.AddFormParameter("contentLayout", "Subfolder");
+                case QBittorrentContentLayout.Original:
+                    request.AddFormParameter("contentLayout", "Original");
+                    break;
+                case QBittorrentContentLayout.Subfolder:
+                    request.AddFormParameter("contentLayout", "Subfolder");
+                    break;
+                case QBittorrentContentLayout.Subfolder:
+                    request.AddFormParameter("contentLayout", "NoSubfolder");
+                    break;
             }
         }
 
